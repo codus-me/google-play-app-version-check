@@ -5,8 +5,9 @@ public class HelloWorld {
         String packageName = "me.codus.imazu";
 
         try {
-            String version = GooglePlayVersionNameParser.parse(packageName);
-            System.out.println("got version= "+version);
+            GooglePlayVersionNameParser.Result result = GooglePlayVersionNameParser.parse(packageName);
+            System.out.println("got version= "+result.versionName);
+            System.out.println("got updateInfos= "+result.updateInfos);
         } catch(IOException e) {
             System.out.println(e.getMessage());
         }
